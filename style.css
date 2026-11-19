@@ -1,0 +1,14 @@
+/*center text inside the container, apply a skyblue background and rounded corners*/
+.container{
+	text-align: center;
+	background-color: skyblue;
+	border-radius: 5px;
+}
+
+/*Use flexbox on the body to center the container horizontally and vertically*/
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40vh;
+}
