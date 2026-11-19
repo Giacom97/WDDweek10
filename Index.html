@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Week 10</title>
+	<title>Week 10</title>
+	<!-- link to the external CSS file for styling -->
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <input type="text" id="userName" placeholder="Enter your name">
-        <input type="number" id="userAge" placeholder="Enter your age">
-        <button type="button">Submit</button>
-    </form>
+
+	<script>
+		//Function triggered when the user clicks the Submit button
+		function checkEligibility() {
+			// Retrieve the text entered in the name input field using .value
+			let name = document.getElementById("userName").value;
+			//Retrieve the age input and convert it from a string to a number
+			let age = Number(document.getElementById("userAge").value);
+			//Select the paragraph element hwere the output message will appear
+			let messageElement = document.getElementById("message");
+
+			//condition to check if age is 17 or over.
+			if (age >= 17) {
+				//Display eligibility message if 17 or over
+				messageElement.textContent = name + ", you are eligible to apply for a driving license.";
+			} else {
+				//display non-eligibility message if under 17
+				messageElement.textContent = name + ", You are not eligible.";
+			}
+		}
+	</script>
+	<div class="container">
+	<p><h1>Are you eligible to apply the driving license?<h1></p><br>
+	<!-- Form collecting user's name and age -->
+	<form>
+	<!-- text imput for the user's name, age and submition -->
+	<input type="text" id="userName" placeholder="Enter your name">
+	<input type="number" id="userAge" placeholder="Enter your age">
+	<button type="button" onclick="checkEligibility()">Submit</button>
+	</form>
+	<!-- empty paragraph where JS will display the result -->
+	<p id="message"></p>
+</div>
 </body>
 </html>
